@@ -6,16 +6,18 @@
 	quotepath = false
 	autocrlf = input
 [alias]
-	up = pull origin
+	up = pull
 	st = status -bs
 	di = diff
 	me = mergetool
 	co = checkout
+    cob = checkout -b
 	ci = commit
 	br = branch
+    bra = branch -a
 	sta = stash
 	ap = stash apply
-	pu = push origin
+	pu = push
     pr = pull-request
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 [difftool "Kaleidoscope"]
