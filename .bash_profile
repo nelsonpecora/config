@@ -28,3 +28,6 @@ export PATH=/usr/local/bin:$PATH
 # colorful PS1
 export PS1="\u@\[$txtgrn\]\h\[$txtrst\]:\[$txtblu\]\w \[$txtylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 export SUDO_PS1="\[$txtred\]root\[$txtrst\]@\[$txtgrn\]\h\[$txtrst\]:\[$txtblu\]\w \[$txtylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]# "
+
+# raise open file limit
+ulimit -n 2048
