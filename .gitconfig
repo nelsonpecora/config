@@ -19,7 +19,7 @@
 	ap = stash apply
 	pu = push
     pr = pull-request
-    latest = | git checkout master && git pull origin master && git checkout - && git merge master
+    latest = ! git checkout master && git pull origin master && git checkout - && git merge master
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
