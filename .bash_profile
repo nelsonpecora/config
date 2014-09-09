@@ -1,6 +1,7 @@
 alias gc="git add -A && git commit -m"
 alias daisy="du -h -d 1"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias sshqa="ssh devs@factory01.qa.nymetro.com"
 
 # add hub
 alias git=hub
