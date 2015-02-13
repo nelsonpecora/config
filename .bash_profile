@@ -1,7 +1,10 @@
+$IOJS_VERSION = echo $NVM_BIN | cut -d '/' -f 7
+
 alias gc="git add -A && git commit -m"
 alias daisy="du -h -d 1"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sshqa="ssh devs@factory01.qa.nymetro.com"
+alias nvmupdate="nvm install iojs --reinstall-packages-from=$IOJS_VERSION"
 
 # add hub
 alias git=hub
@@ -32,3 +35,6 @@ export SUDO_PS1="\[$txtred\]root\[$txtrst\]@\[$txtgrn\]\h\[$txtrst\]:\[$txtblu\]
 
 # raise open file limit
 ulimit -n 2048
+
+export NVM_DIR="/Users/npecora/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
