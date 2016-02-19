@@ -21,6 +21,7 @@
     pr = pull-request
     latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
+    #dm = ! git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
@@ -38,3 +39,7 @@
 	default = simple
 [mergetool]
 	keepBackup = false
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
