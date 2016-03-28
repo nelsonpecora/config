@@ -82,3 +82,10 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gc="git add -A && git commit -m"
+alias daisy="du -h -d 1"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# raise open file limit
+ulimit -n 2048
