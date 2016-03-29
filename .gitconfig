@@ -43,6 +43,6 @@
 	smudge = git hawser smudge %f
 	required = true
 [color "status"]
-  added = blue
-  changed = yellow
+  added = green
+  changed = blue
   untracked = white ul
