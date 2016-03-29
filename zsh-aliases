@@ -1,0 +1,20 @@
+# delete all merged git branches
+alias gitmerged="git branch --merged master | grep -v \"\* master\" | xargs -n 1 git branch -d"
+
+# git add everything and commit
+alias gc="git add -A && git commit -m"
+
+# count lines in a file | stdin
+alias countlines="wc -l"
+
+# count words in a file | stdin
+alias countwords="wc -w"
+
+# count characters in a file | stdin (including multi-bite characters)
+alias countwords="wc -m"
+
+# get human-readable file size
+alias daisy="du -h -d 1"
+
+# sublime text
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
