@@ -42,6 +42,9 @@ source ~/config/zsh-aliases
 # raise open file limit (for node)
 ulimit -n 2048
 
+# set vim as default editor (for git commits, etc)
+EDITOR=vim
+
 # set misc zsh options
 setopt noclobber # prevent clobbering files with > (use >!)
 setopt correctall # correct bad commands and arguments automatically!
