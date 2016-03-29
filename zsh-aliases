@@ -21,3 +21,12 @@ alias daisy="du -h -d 1"
 
 # sublime text
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# set up the default editor
+if [[ -n $SSH_CONNECTION ]]; then
+  # on remote connections
+  export EDITOR='vim'
+else
+  # locally
+  export EDITOR='atom'
+fi
