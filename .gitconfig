@@ -46,3 +46,5 @@
   added = green
   changed = blue
   untracked = white ul
+[color]
+	ui = true
