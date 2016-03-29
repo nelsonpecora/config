@@ -39,5 +39,8 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 # custom aliases
 source ~/config/zsh-aliases
 
+# raise open file limit (for node)
+ulimit -n 2048
+
 # I think it’s time we blow this scene. Get everybody and the stuff together. OK. 3 2 1. Let’s jam!
 antigen apply
