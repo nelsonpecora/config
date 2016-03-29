@@ -11,17 +11,16 @@
 	di = diff
 	me = mergetool
 	co = checkout
-    cob = checkout -b
+  cob = checkout -b
 	ci = commit
 	br = branch
-    bra = branch -a
+  bra = branch -a
 	sta = stash
 	ap = stash apply
 	pu = push
-    pr = pull-request
-    latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
-    #dm = ! git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+  pr = pull-request
+  latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
@@ -43,3 +42,7 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[color "status"]
+  added = blue
+  changed = yellow
+  untracked = white ul

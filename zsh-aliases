@@ -4,6 +4,9 @@ alias gitmerged="git branch --merged master | grep -v \"\* master\" | xargs -n 1
 # git add everything and commit
 alias gc="git add -A && git commit -m"
 
+# git status
+alias gs="git status -bs"
+
 # count lines in a file | stdin
 alias countlines="wc -l"
 
