@@ -46,5 +46,9 @@
   added = green
   changed = blue
   untracked = white ul
+[color "branch"]
+  current = magenta bold
+  local = white
+  remote = yellow dim
 [color]
 	ui = true
