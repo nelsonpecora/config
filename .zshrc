@@ -42,5 +42,9 @@ source ~/config/zsh-aliases
 # raise open file limit (for node)
 ulimit -n 2048
 
+# set misc zsh options
+setopt noclobber # prevent clobbering files with > (use >!)
+setopt correctall # correct bad commands and arguments automatically!
+
 # I think it’s time we blow this scene. Get everybody and the stuff together. OK. 3 2 1. Let’s jam!
 antigen apply
