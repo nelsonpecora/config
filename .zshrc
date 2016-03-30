@@ -26,6 +26,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # bd (like cd but it goes back up!)
 antigen bundle Tarrasch/zsh-bd
 
+# mkc (recursive mkdir)
+antigen bundle caarlos0/zsh-mkc
+
 # theme options
 SPACESHIP_PROMPT_ADD_NEWLINE=true
 SPACESHIP_PROMPT_SEPARATE_LINE=false
