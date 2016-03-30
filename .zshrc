@@ -35,6 +35,7 @@ SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_RUBY_SHOW=false
 SPACESHIP_VENV_SHOW=false
 SPACESHIP_NVM_SHOW=false
+SPACESHIP_PROMPT_SYMBOL=❯ # from sindresorhus/pure
 
 # theme
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
