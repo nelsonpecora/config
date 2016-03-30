@@ -21,6 +21,24 @@
   pr = pull-request
   latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
+	# infernal magicks
+	enchant = add
+	brew = commit
+	bless = init
+	spells = status
+	divine = diff
+	necronomicon = lg
+	obliterate = reset
+	sacrifice = reset --hard
+	banish = rm
+	curse = checkout
+	mix = merge
+	conjure = pull
+	cast = push
+	smite = push --force
+	runes = show
+	teleport = mv
+	obtain = fetch
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
