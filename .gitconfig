@@ -20,7 +20,7 @@
 	pu = push
   pr = pull-request
   latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr    )%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 	# infernal magicks
 	enchant = add
 	brew = commit
