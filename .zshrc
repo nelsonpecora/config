@@ -1,4 +1,6 @@
-source ~/.zplug/init.zsh
+ZPLUG_HOME="~/config/.zplug"
+
+source ~/config/.zplug/init.zsh
 
 # use oh-my-zsh bundles
 zplug "plugins/gitfast", from:oh-my-zsh # autocompletion for git
