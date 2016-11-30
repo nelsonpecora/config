@@ -40,6 +40,7 @@ source ~/config/zsh-aliases
 # custom env variables
 export HYPERTERM_SYNC_SETTINGS_PERSONAL_ACCESS_TOKEN=fe6c88261a5776d864100a87f65073e9e80a3066
 export HYPERTERM_SYNC_SETTINGS_GIST_ID=cfb89fae97d3ee2737d10d07759d2633
+export LS_COLORS=1
 
 # set vim as default editor (for git commits, etc)
 export EDITOR=vim

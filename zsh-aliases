@@ -24,3 +24,6 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # github
 alias git=hub
+
+# colors for files and folders in ls
+alias ls="ls -G"
