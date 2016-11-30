@@ -3,9 +3,9 @@ ZPLUG_HOME="~/config/.zplug"
 source ~/config/.zplug/init.zsh
 
 # use oh-my-zsh bundles
-zplug "plugins/gitfast", from:oh-my-zsh # autocompletion for git
 zplug "plugins/urltools", from:oh-my-zsh # urlencode and urldecode
 zplug "plugins/npm", from:oh-my-zsh # autocompletion for npm
+zplug "plugins/nvm", from:oh-my-zsh # actual nvm, as a plugin
 zplug "plugins/brew", from:oh-my-zsh # autocompletion for brew
 zplug "plugins/cloudapp", from:oh-my-zsh # uploads things to cloudapp, copies url to clipboard
 zplug "plugins/web-search", from:oh-my-zsh # google command, searches google from terminal
@@ -37,11 +37,15 @@ zplug "denysdovhan/spaceship-zsh-theme", as:theme
 # custom aliases
 source ~/config/zsh-aliases
 
-# raise open file limit (for node)
-ulimit -n 2048
+# custom env variables
+export HYPERTERM_SYNC_SETTINGS_PERSONAL_ACCESS_TOKEN=fe6c88261a5776d864100a87f65073e9e80a3066
+export HYPERTERM_SYNC_SETTINGS_GIST_ID=cfb89fae97d3ee2737d10d07759d2633
 
 # set vim as default editor (for git commits, etc)
-EDITOR=vim
+export EDITOR=vim
+
+# raise open file limit (for node)
+ulimit -n 2048
 
 # set misc zsh options
 setopt noclobber # prevent clobbering files with > (use >!)
