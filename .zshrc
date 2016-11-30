@@ -1,33 +1,23 @@
-source ~/config/antigen/antigen.zsh
-
-# load oh-my-zsh
-antigen use oh-my-zsh
+source ~/.zplug/init.zsh
 
 # use oh-my-zsh bundles
-antigen bundle git
-antigen bundle heroku
-antigen bundle copyfile
-antigen bundle history
-antigen bundle urltools
-antigen bundle github
-antigen bundle npm
-antigen bundle nvm
-antigen bundle brew
-antigen bundle cloudapp
-antigen bundle command-not-found
-antigen bundle colored-man-pages
-antigen bundle web-search
-antigen bundle osx
-antigen bundle emoji-clock
+zplug "plugins/gitfast", from:oh-my-zsh # autocompletion for git
+zplug "plugins/urltools", from:oh-my-zsh # urlencode and urldecode
+zplug "plugins/npm", from:oh-my-zsh # autocompletion for npm
+zplug "plugins/brew", from:oh-my-zsh # autocompletion for brew
+zplug "plugins/cloudapp", from:oh-my-zsh # uploads things to cloudapp, copies url to clipboard
+zplug "plugins/web-search", from:oh-my-zsh # google command, searches google from terminal
+zplug "plugins/osx", from:oh-my-zsh # quick-look, tab (opens current dir in a tab)
 
 # syntax highlighting for cli commands
-antigen bundle zsh-users/zsh-syntax-highlighting
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
 
 # bd (like cd but it goes back up!)
-antigen bundle Tarrasch/zsh-bd
+zplug "Tarrasch/zsh-bd"
 
 # mkc (recursive mkdir)
-antigen bundle caarlos0/zsh-mkc
+zplug "caarlos0/zsh-mkc"
 
 # theme options
 SPACESHIP_PROMPT_ADD_NEWLINE=true
@@ -40,7 +30,7 @@ SPACESHIP_GIT_UNPULLED=%{$fg[cyan]%}⇣%{$fg[red]%}
 SPACESHIP_GIT_UNPUSHED=%{$fg[cyan]%}⇡%{$fg[red]%}
 
 # theme
-antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+zplug "denysdovhan/spaceship-zsh-theme", as:theme
 
 # custom aliases
 source ~/config/zsh-aliases
@@ -56,4 +46,14 @@ setopt noclobber # prevent clobbering files with > (use >!)
 setopt correctall # correct bad commands and arguments automatically!
 
 # I think it’s time we blow this scene. Get everybody and the stuff together. OK. 3 2 1. Let’s jam!
-antigen apply
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
