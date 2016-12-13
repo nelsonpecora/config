@@ -1,6 +1,6 @@
-ZPLUG_HOME="~/config/.zplug"
+ZPLUG_HOME="$HOME/config/.zplug"
 
-source ~/config/.zplug/init.zsh
+source "$ZPLUG_HOME"/init.zsh
 
 # use oh-my-zsh bundles
 zplug "plugins/urltools", from:oh-my-zsh # urlencode and urldecode
@@ -35,7 +35,7 @@ SPACESHIP_GIT_UNPUSHED=%{$fg[cyan]%}⇡%{$fg[red]%}
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
 
 # custom aliases
-source ~/config/zsh-aliases
+source "$HOME"/config/zsh-aliases
 
 # custom env variables
 export HYPERTERM_SYNC_SETTINGS_PERSONAL_ACCESS_TOKEN=fe6c88261a5776d864100a87f65073e9e80a3066
