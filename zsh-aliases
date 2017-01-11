@@ -27,3 +27,6 @@ alias git=hub
 
 # colors for files and folders in ls
 alias ls="ls -G"
+
+# get html from clipboard
+alias html='osascript -e '"'"'the clipboard as «class HTML»'"'"' | perl -ne '"'"'print chr foreach unpack("C*",pack("H*",substr($_,11,-3)))'"'"''
