@@ -92,5 +92,8 @@ if ! zplug check --verbose; then
     fi
 fi
 
+# add ssh keys
+ssh-add -A 2>/dev/null;
+
 # Then, source plugins and add commands to $PATH
 zplug load
