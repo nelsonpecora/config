@@ -26,10 +26,10 @@ SPACESHIP_PROMPT_ADD_NEWLINE=true
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_RUBY_SHOW=false
 SPACESHIP_VENV_SHOW=false
-SPACESHIP_NVM_SHOW=false
+SPACESHIP_NODE_SHOW=false
 SPACESHIP_PROMPT_SYMBOL=❯ # from sindresorhus/pure
-SPACESHIP_GIT_UNPULLED=%{$fg[cyan]%}⇣%{$fg[red]%}
-SPACESHIP_GIT_UNPUSHED=%{$fg[cyan]%}⇡%{$fg[red]%}
+SPACESHIP_GIT_STATUS_BEHIND=%{$fg[cyan]%}⇣%{$fg[red]%}
+SPACESHIP_GIT_STATUS_AHEAD=%{$fg[cyan]%}⇡%{$fg[red]%}
 
 # theme
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
