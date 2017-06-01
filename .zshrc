@@ -100,3 +100,7 @@ if zplug check zsh-users/zsh-history-substring-search; then
     bindkey '\eOA' history-substring-search-up
     bindkey '\eOB' history-substring-search-down
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
