@@ -11,6 +11,10 @@ zplug "plugins/cloudapp", from:oh-my-zsh # uploads things to cloudapp, copies ur
 zplug "plugins/web-search", from:oh-my-zsh # google command, searches google from terminal
 zplug "plugins/osx", from:oh-my-zsh # quick-look, tab (opens current dir in a tab)
 
+# autosuggestion config
+ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 # syntax highlighting and history substring search
 zplug "zsh-users/zsh-completions"
 zplug "tarruda/zsh-autosuggestions",            nice:10
@@ -49,7 +53,6 @@ export BLOCK_SIZE=human-readable # https://www.gnu.org/software/coreutils/manual
 export HISTSIZE=11000
 export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
-unset COMPLETION_WAITING_DOTS # https://github.com/tarruda/zsh-autosuggestions#known-issues
 export DISABLE_AUTO_TITLE=true
 export DISABLE_CORRECTION=true
 
@@ -97,8 +100,8 @@ KEYTIMEOUT=1
 bindkey -v
 
 if zplug check zsh-users/zsh-history-substring-search; then
-    bindkey '\eOA' history-substring-search-up
-    bindkey '\eOB' history-substring-search-down
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
 fi
 
 export NVM_DIR="$HOME/.nvm"
