@@ -1,6 +1,6 @@
 [user]
 	name = Nelson Pecora
-	email = nelson@yoshokatana.com
+	email = nelson@keats.me
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
