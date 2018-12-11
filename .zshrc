@@ -2,11 +2,17 @@ ZPLUG_HOME="$HOME/config/.zplug"
 
 source "$ZPLUG_HOME"/init.zsh
 
+# add local binaries to $PATH
+export PATH=/usr/local/bin:$PATH
+
 # use oh-my-zsh bundles
 zplug "plugins/urltools", from:oh-my-zsh # urlencode and urldecode
 zplug "plugins/npm", from:oh-my-zsh # autocompletion for npm
 zplug "plugins/nvm", from:oh-my-zsh # actual nvm, as a plugin
 zplug "plugins/brew", from:oh-my-zsh # autocompletion for brew
+zplug "plugins/pip", from:oh-my-zsh # autocompletion for pip
+zplug "plugins/docker", from:oh-my-zsh # autocompletion for docker
+zplug "plugins/aws", from:oh-my-zsh # autocompletion for aws + aws tool
 zplug "plugins/cloudapp", from:oh-my-zsh # uploads things to cloudapp, copies url to clipboard
 zplug "plugins/web-search", from:oh-my-zsh # google command, searches google from terminal
 zplug "plugins/osx", from:oh-my-zsh # quick-look, tab (opens current dir in a tab)
@@ -35,7 +41,8 @@ SPACESHIP_VENV_SHOW=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
 SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_PROMPT_SYMBOL=❯ # from sindresorhus/pure
+SPACESHIP_CHAR_SYMBOL=❯ # from sindresorhus/pure
+SPACESHIP_CHAR_SUFFIX=' '
 SPACESHIP_GIT_BRANCH_PREFIX='\u200B'
 SPACESHIP_GIT_STATUS_BEHIND=%{$fg[cyan]%}⇣%{$fg[red]%}
 SPACESHIP_GIT_STATUS_AHEAD=%{$fg[cyan]%}⇡%{$fg[red]%}
@@ -64,7 +71,6 @@ ulimit -n 2048
 
 # set misc zsh options
 setopt noclobber # prevent clobbering files with > (use >!)
-setopt correctall # correct bad commands and arguments automatically!
 # misc history cleanup
 setopt append_history
 setopt hist_expire_dups_first
