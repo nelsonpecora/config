@@ -23,7 +23,13 @@ alias daisy="du -h -d 1"
 alias git=hub
 
 # colors for files and folders in ls
-alias ls='ls -h --color=auto'
+alias ls='ls -h -G'
+
+# colors for grep
+alias grep='grep --color=auto'
 
 # get html from clipboard
 alias html='osascript -e '"'"'the clipboard as «class HTML»'"'"' | perl -ne '"'"'print chr foreach unpack("C*",pack("H*",substr($_,11,-3)))'"'"''
+
+# be nice to the robots
+alias please=sudo

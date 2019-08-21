@@ -1,0 +1,19 @@
+# Autosuggestion config
+ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
+
+export LS_COLORS=1
+export CLICOLOR=1
+export BLOCK_SIZE=human-readable # https://www.gnu.org/software/coreutils/manual/html_node/Block-size.html
+export HISTSIZE=11000
+export SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+export DISABLE_AUTO_TITLE=true
+export DISABLE_CORRECTION=true
+
+# Set vim as default editor (for git commits, etc)
+export EDITOR=vim
+
+KEYTIMEOUT=1
+bindkey -v
