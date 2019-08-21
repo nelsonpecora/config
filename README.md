@@ -21,3 +21,7 @@ cd ~ && ln -s config/.gitignore .gitignore && ln -s config/.gitconfig .gitconfig
 7. `yarn global add npx nodemon tldr standard`
 
 ## To Update
+
+```
+zplugin self-update
+```
