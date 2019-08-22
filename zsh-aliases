@@ -33,3 +33,7 @@ alias html='osascript -e '"'"'the clipboard as «class HTML»'"'"' | perl -ne '"
 
 # be nice to the robots
 alias please=sudo
+
+# fancy linters
+alias standard='standard --fix --verbose | snazzy'
+alias semistandard='semistandard --fix --verbose | snazzy'
