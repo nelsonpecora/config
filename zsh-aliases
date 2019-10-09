@@ -37,3 +37,8 @@ alias please=sudo
 # fancy linters
 alias standard='standard --fix --verbose | snazzy'
 alias semistandard='semistandard --fix --verbose | snazzy'
+
+# yarn aliases
+alias yi='yarn install'
+alias ya='yarn add'
+alias yd='yarn add -D'
