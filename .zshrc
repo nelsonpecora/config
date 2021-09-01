@@ -1,15 +1,17 @@
-# Install zplugin if not installed
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-HISTFILE="${HOME}/.histfile"
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
-# Add local binaries to $PATH
-export PATH=/usr/local/bin:$PATH
-
-# Add ssh keys
-ssh-add -A 2>/dev/null;
 
 # ZSH Options
 # Prevent clobbering files with > (use >! if you want to override them)
@@ -62,9 +64,6 @@ zt 0a
 z snippet OMZ::plugins/yarn/yarn.plugin.zsh
 
 zt 0a
-z snippet OMZ::plugins/cloudapp/cloudapp.plugin.zsh
-
-zt 0a
 z snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
 
 zt 0a
@@ -72,10 +71,6 @@ z snippet OMZ::plugins/thefuck/thefuck.plugin.zsh
 
 zt 0a
 z snippet OMZ::plugins/urltools/urltools.plugin.zsh
-
-zplugin ice svn wait"0" lucid atinit"local ZSH=\$PWD" \
-    atclone"mkdir -p plugins; cd plugins; ln -sfn ../. osx"
-z snippet OMZ::plugins/osx
 
 zt 0a
 z snippet "https://raw.githubusercontent.com/caarlos0/zsh-mkc/master/mkc.plugin.zsh"
@@ -125,7 +120,31 @@ source "$HOME/config/zsh-aliases"
 source "$HOME/config/zsh-functions"
 source "$HOME/config/zsh-variables"
 
+# add stuff to $PATH
+
+# make sure brew works
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+
 # Load yarn globals
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# I think it’s time we blow this scene. Get everybody and the stuff together. OK. 3 2 1. Let’s jam!
+# configure pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# configure thefuck
+eval $(thefuck --alias)
+
+# configure nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# I think it’s time we blow this scene.
+# Get everybody and the stuff together. 
+# OK. 3 2 1. Let’s jam!
