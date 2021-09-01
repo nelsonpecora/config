@@ -130,7 +130,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # configure pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -146,5 +146,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # I think it’s time we blow this scene.
-# Get everybody and the stuff together. 
+# Get everybody and the stuff together.
 # OK. 3 2 1. Let’s jam!
