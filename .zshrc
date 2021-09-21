@@ -136,6 +136,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# load golang globals
+export PATH="/usr/local/go/bin:$PATH"
+
 # configure thefuck
 eval $(thefuck --alias)
 
