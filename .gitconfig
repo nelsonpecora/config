@@ -23,10 +23,10 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 	# infernal magicks
 	enchant = add
-	brew = commit
+	charge = commit
 	bless = init
 	spells = status
-	divine = diff
+	scry = diff
 	necronomicon = lg
 	obliterate = reset
 	sacrifice = reset --hard
@@ -39,6 +39,7 @@
 	runes = show
 	teleport = mv
 	obtain = fetch
+	summon = clone
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [diff]
