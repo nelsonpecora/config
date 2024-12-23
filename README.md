@@ -7,21 +7,21 @@
 
 ## To Install
 
-1. Clone this repo to `~/config`
+1. Clone this repo to `~/www/config`
 2. Symlink files in this repo:
 
 ```
-cd ~ && ln -s config/.gitignore .gitignore && ln -s config/.gitconfig .gitconfig && ln -s config/.vim .vim && ln -s config/.vimrc .vimrc
+cd ~ 
+ln -s www/config/.gitignore .gitignore 
+ln -s www/config/.gitconfig .gitconfig 
+ln -s www/config/.vim .vim 
+ln -s www/config/.vimrc .vimrc
+ln -s www/config/.zshrc .zshrc
+ln -s www/config/.p10k.zsh .p10k.zsh
 ```
 
-3. Copy private env from [this gist](https://gist.github.com/nelsonpecora/fa697f254626e4db1c3c2c0fc27ce8b4) into `~/.zshrc`
-4. Install `zplugin` with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"`
-5. Remove extra zplugin stuff added to `~/.zshrc`
-6. Install nvm, latest node (using nvm), yarn
-7. `yarn global add npx nodemon tldr standard`
+3. Install `oh-my-zsh`
+4. Install p10k plugin
+5. Globally install `git-switch-branch` from npm
+6. Restart zsh with `exec zsh`
 
-## To Update
-
-```
-zplugin self-update
-```

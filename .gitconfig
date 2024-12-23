@@ -1,12 +1,29 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
 	name = Nelson Pecora
-	email = nelson@keats.me
+	email = hi@nelson.codes
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKowcgtuFI0asrzRUj/15TnGTpqOSbsfJBvdXL14Gov9
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
 [alias]
-	up = pull
+	# instead of doing a git pull, only fetch the branch we're on (e.g. master)
+	up = ! git fetch origin "$(git symbolic-ref --short HEAD)" --no-tags && git rebase "origin/$(git symbolic-ref --short HEAD)"
+	# use with git-switch-branch (from npm)
+	switch = ! git-switch-branch
+	prune-branches = !git-prune-branches
+	# other short commands
 	st = status -bs
 	di = diff
 	me = mergetool
@@ -17,9 +34,14 @@
   bra = branch -a
 	sta = stash
 	ap = stash apply
-	pu = push
+	pu = ! git push -u origin "$(git symbolic-ref --short HEAD)"
   pr = pull-request
-  latest = ! git checkout master && git pull origin master && git checkout - && git rebase master
+	# switch to (co) master (m) and update
+	com = ! git co master && git up
+	# update (up) branch (b) from latest master
+  refresh = ! git com && git co - && git rebase master
+	# clear out all staged + unstaged changes
+	clear = checkout -- .
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit --full-history --branches
 	# infernal magicks
 	enchant = add
@@ -40,28 +62,11 @@
 	teleport = mv
 	obtain = fetch
 	summon = clone
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-[merge]
-	tool = Kaleidoscope
 [push]
 	default = simple
 [pull]
 	default = simple
-[mergetool]
-	keepBackup = false
-	prompt = false
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+	rebase = true
 [color "status"]
   added = green
   changed = blue
