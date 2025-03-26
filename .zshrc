@@ -120,6 +120,10 @@ alias w="yarn workspace"
 # switch git branches
 alias sb="git-switch-branch"
 
+# list file permissions as octal numbers
+# a better version of ls -l
+alias ll="stat -c \"%a %n\""
+
 # OSX-specific aliases
 if [[ "$(uname)" == "Darwin" ]]; then
     alias ls='ls -Gh'
