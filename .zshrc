@@ -57,6 +57,9 @@ setopt no_beep
 # raise open file limit (for node)
 ulimit -n 2048
 
+# don't try to autocorrect certain things
+alias yarn='nocorrect yarn'
+
 # configure colors
 
 export CLICOLOR=1
